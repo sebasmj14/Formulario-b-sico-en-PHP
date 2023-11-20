@@ -1,0 +1,56 @@
+:root{
+    --button-text-color: #fff;
+    --button-front-color: #159a9c;
+    --button-shadow-right-color: #159a9c;
+    --button-shadow-bottom-color: #159a9c;
+}
+
+.button::after, .button::before {
+  position: absolute;
+  content: "";
+  transition: all 0.5s;
+}
+
+.button {
+  margin: 10px 0 0 10px;
+  display: inline-block;
+  padding: 10px 5px;
+  color: var(--button-text-color);
+  transform: translate(-10px, -10px);
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: all 0.25s;
+  background-color: var( --button-front-color );
+}
+.button::before {
+  bottom: -15px;
+  height: 15px;
+  width: 100%;
+  left: 8px;
+  transform: skewX(45deg);
+  background-color: var( --button-shadow-bottom-color );
+}
+.button::after {
+  right: -15px;
+  height: 100%;
+  width: 15px;
+  bottom: -8px;
+  transform: skewY(45deg);
+  background-color: var(--button-shadow-right-color);
+}
+.button:active {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.button:active::before {
+  bottom: -5px;
+  height: 5px;
+  left: 3px;
+}
+.button:active::after {
+  right: -5px;
+  width: 5px;
+  bottom: -3px;
+}
